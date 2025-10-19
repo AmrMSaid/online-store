@@ -1,0 +1,92 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/all.min.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <section class="py-5">
+      <div class="title text-center shadow border mb-5">
+        <h2 class="text-uppercase">
+          <span class="text-info">e</span>lonsol
+          <span class="text-info">s</span>tore
+        </h2>
+      </div>
+      <div class="form w-75 mx-auto">
+        <div class="form-floating mb-3">
+          <input
+            type="text"
+            class="form-control border-0 border-bottom rounded-0"
+            id="productName"
+            placeholder="name@example.com"
+          />
+          <label for="productName">Product Name</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input
+            type="number"
+            class="form-control border-0 border-bottom rounded-0"
+            id="productPrice"
+            placeholder="name@example.com"
+          />
+          <label for="productPrice">Product Price</label>
+        </div>
+        <div class="form-floating mb-3">
+          <select
+            class="form-select border-0 border-bottom rounded-0"
+            id="productCategory"
+            aria-label="Floating label select example"
+          >
+            <option selected disabled hidden>Choose Product Category</option>
+            <option>Laptop</option>
+            <option>Mobile</option>
+            <option>Camera</option>
+            <option>Printer</option>
+            <option>Speaker</option>
+            <option>Headphone</option>
+            <option>TV</option>
+          </select>
+          <label for="productCategory">Product Category</label>
+        </div>
+        <div class="form-floating mb-3">
+          <textarea
+            class="form-control border-0 border-bottom rounded-0"
+            placeholder="Leave a comment here"
+            id="productDescription"
+          ></textarea>
+          <label for="productDescription">Product Description</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input
+            type="file"
+            class="form-control border-0 border-bottom rounded-0"
+            id="productImage"
+            placeholder="name@example.com"
+          />
+          <label for="productImage">Product Image</label>
+        </div>
+        <button
+          id="addBtn"
+          class="btn btn-info text-light d-block"
+          onclick="addProduct()"
+        >
+          Add Product
+        </button>
+        <button id="updateBtn" onclick="updateProduct()" class="btn btn-danger text-light d-none">
+          Update Product
+        </button>
+      </div>
+      <div class="container mt-5 px-3">
+        <div>
+          <input
+            oninput="searchProducts(this.value)"
+            type="search"
+            class="form-control my-4"
+          />
+        </div>
+        <div id="productList" class="row row-cols-5"></div>
+      </div>
+    </section>
+    <script src="./js/app.js"></script>
+  </body>
+</html>

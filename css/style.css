@@ -1,0 +1,25 @@
+.title {
+  width: fit-content;
+  margin: 0 auto;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.form-control,
+.form-select {
+  border-width: 2px !important;
+}
+
+.form-control:focus,
+.form-select:focus {
+  box-shadow: none;
+  border-color: cadetblue !important;
+}
+
+.product-image {
+  width: 150px;
+}
+
+.fa-trash:hover {
+  animation: fa-shake 1s 1 ease-in-out;
+}
