@@ -1,8 +1,5 @@
 .title {
   width: fit-content;
-  margin: 0 auto;
-  padding: 10px;
-  border-radius: 4px;
 }
 
 .form-control,
@@ -16,10 +13,29 @@
   border-color: cadetblue !important;
 }
 
-.product-image {
-  width: 150px;
+#productList {
+  row-gap: 200px;
+  margin-bottom: 150px;
+}
+
+.product {
+  height: 250px;
 }
 
 .fa-trash:hover {
   animation: fa-shake 1s 1 ease-in-out;
+}
+
+.form-control.is-valid:focus {
+  box-shadow: none;
+  border-color: #228b22 !important;
+}
+
+.form-control.is-invalid:focus {
+  box-shadow: none;
+  border-color: #ff8383 !important;
+}
+
+i:hover {
+  cursor: pointer;
 }

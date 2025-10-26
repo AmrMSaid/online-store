@@ -6,33 +6,42 @@
   </head>
   <body>
     <section class="py-5">
-      <div class="title text-center shadow border mb-5">
+      <div
+        class="title text-center shadow border mb-5 my-0 mx-auto p-2 rounded-1"
+      >
         <h2 class="text-uppercase">
-          <span class="text-info">e</span>lonsol
+          <span class="text-info">o</span>nline
           <span class="text-info">s</span>tore
         </h2>
       </div>
       <div class="form w-75 mx-auto">
         <div class="form-floating mb-3">
           <input
+            oninput="validateInput(inputsRegex.name, this)"
             type="text"
             class="form-control border-0 border-bottom rounded-0"
             id="productName"
             placeholder="name@example.com"
           />
+          <p class="text-danger d-none">
+            Name must be 3-50 characters starting with a capital letter.
+          </p>
           <label for="productName">Product Name</label>
         </div>
         <div class="form-floating mb-3">
           <input
+            oninput="validateInput(inputsRegex.price, this)"
             type="number"
             class="form-control border-0 border-bottom rounded-0"
             id="productPrice"
             placeholder="name@example.com"
           />
+          <p class="text-danger d-none">Price must be greater than zero.</p>
           <label for="productPrice">Product Price</label>
         </div>
         <div class="form-floating mb-3">
           <select
+            oninput="validateInput(inputsRegex.category, this)"
             class="form-select border-0 border-bottom rounded-0"
             id="productCategory"
             aria-label="Floating label select example"
@@ -46,14 +55,19 @@
             <option>Headphone</option>
             <option>TV</option>
           </select>
+          <p class="text-danger d-none">Choose a category.</p>
           <label for="productCategory">Product Category</label>
         </div>
         <div class="form-floating mb-3">
           <textarea
+            oninput="validateInput(inputsRegex.description, this)"
             class="form-control border-0 border-bottom rounded-0"
             placeholder="Leave a comment here"
             id="productDescription"
           ></textarea>
+          <p class="text-danger d-none">
+            Description must be 3-100 characters.
+          </p>
           <label for="productDescription">Product Description</label>
         </div>
         <div class="form-floating mb-3">
@@ -63,6 +77,7 @@
             id="productImage"
             placeholder="name@example.com"
           />
+          <p class="text-danger d-none">Upload an image.</p>
           <label for="productImage">Product Image</label>
         </div>
         <button
@@ -72,7 +87,11 @@
         >
           Add Product
         </button>
-        <button id="updateBtn" onclick="updateProduct()" class="btn btn-danger text-light d-none">
+        <button
+          id="updateBtn"
+          onclick="updateProduct()"
+          class="btn btn-danger text-light d-none"
+        >
           Update Product
         </button>
       </div>
@@ -82,9 +101,10 @@
             oninput="searchProducts(this.value)"
             type="search"
             class="form-control my-4"
+            placeholder="Search"
           />
         </div>
-        <div id="productList" class="row row-cols-5"></div>
+        <div id="productList" class="row row-cols-5 d-flex"></div>
       </div>
     </section>
     <script src="./js/app.js"></script>
